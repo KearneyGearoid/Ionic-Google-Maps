@@ -1,0 +1,34 @@
+<ion-view view-title="{{doctor.name}}" >
+
+  <ion-content has-header="true" has-tabs="true">
+    <div class="list card">
+      <div class="item item-divider">
+        <b>Average Waiting Time</b>
+        <span class="badge badge-positive">{{doctor.waitTime}} </span>
+      </div>
+      <div class="item item-thumbnail-left">
+        <img src="{{doctor.image}}"/>
+        <h2>{{doctor.name}}</h2>
+        <div>{{doctor.street}}</div>
+        <div>{{doctor.city}}, {{doctor.abbrev}}</div>
+      </div>
+      <div class="item item-divider">
+        Hours
+      </div>
+      <div class="item item-body">
+        <div><b>Weekdays:</b> {{doctor.hours.weekdays}}</div>
+        <div><b>Weekends:</b> {{doctor.hours.weekends}}</div>
+      </div>
+    </div>
+    <div class="button-bar padding">
+      <a class="button button-positive" ng-href="tel:{{doctor.phone}}">
+        <i class="icon ion-ios7-telephone"></i>
+        Call
+      </a>
+      <a class="button" href="http://maps.google.com/maps?saddr=current+location&daddr={{doctor.street}} {{doctor.state}} {{location.abbrev}}">
+        <i class="icon ion-map"></i>
+        Directions
+      </a>
+    </div>
+  </ion-content>
+</ion-view>
